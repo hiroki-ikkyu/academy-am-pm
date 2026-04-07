@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ESG・テーマ型ファンド — Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--accent:#2c2c2e;--blue:#0071e3;--green:#34c759;--orange:#ff9f0a;--red:#ff453a;--purple:#bf5af2;--teal:#5ac8fa;--radius:16px;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+body{font-family:'DM Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:430px;margin:0 auto;padding:0 20px 60px}
+.back{display:inline-flex;align-items:center;gap:4px;padding:16px 0;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.level-badge{display:inline-block;padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;color:#fff;margin-bottom:10px}
+.page-title{font-size:22px;font-weight:700;margin-bottom:4px;letter-spacing:-0.5px;line-height:1.3}
+.page-sub{font-size:12px;color:var(--sub);margin-bottom:24px;line-height:1.5}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h4{font-size:13px;font-weight:700;margin:12px 0 6px;color:var(--accent)}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.75}
+.card ul,.card ol{padding-left:18px;margin:8px 0}
+.card li{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:4px}
+.card li strong{color:var(--text)}
+.formula{background:#f0f0f2;border-radius:10px;padding:14px;margin:12px 0;font-family:'DM Sans',monospace;font-size:13px;font-weight:600;text-align:center;line-height:1.6}
+.highlight{border-radius:0 10px 10px 0;padding:12px 14px;margin:12px 0}
+.highlight p{color:var(--text)!important;font-weight:500;font-size:12.5px;line-height:1.75}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.stat-box{background:var(--bg);border-radius:10px;padding:12px;text-align:center}
+.stat-val{font-size:20px;font-weight:700}
+.stat-label{font-size:10px;color:var(--sub);margin-top:2px}
+.table-wrap{overflow-x:auto;margin:12px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:300px}
+th{background:var(--accent);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #f0f0f2}
+tr:nth-child(even) td{background:#fafafa}
+.quiz{background:var(--card);border:2px solid #e5e5e7;border-radius:var(--radius);padding:18px;margin:14px 0}
+.quiz h4{font-size:13px;font-weight:700;margin-bottom:10px}
+.quiz-option{display:block;width:100%;padding:10px 14px;margin:6px 0;background:var(--bg);border:1.5px solid transparent;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;text-align:left;transition:all 0.2s}
+.quiz-option:hover{border-color:#ccc}
+.quiz-option.correct{background:#34c75920;border-color:#34c759}
+.quiz-option.wrong{background:#ff453a15;border-color:#ff453a}
+.quiz-feedback{font-size:12px;color:var(--sub);margin-top:8px;display:none;line-height:1.6}
+.nav-bottom{display:flex;gap:10px;margin-top:30px}
+.nav-btn{flex:1;padding:14px;border-radius:12px;text-align:center;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-btn.prev{background:var(--card);color:var(--text);box-shadow:var(--shadow)}
+.nav-btn.next{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card,.quiz{animation:fadeUp 0.4s ease both}
+
+.level-badge{background:#ff9f0a}
+.stat-val{color:#ff9f0a}
+.highlight{background:#ff9f0a12;border-left:3px solid #ff9f0a}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="index.html">‹ ホームに戻る</a>
+<div class="level-badge">中級編 #7</div>
+<div class="page-title">ESG・テーマ型ファンド</div>
+<div class="page-sub">ESG規制・インパクト投資・テーマ型——成長領域のプロダクト設計と落とし穴</div>
+
+<div class="card">
+  <h3>🌱 ESG投資の全体像</h3>
+  <p>ESG（環境・社会・ガバナンス）は投資判断に非財務要素を組み込む手法。規制強化とともに急速に拡大し、PMにとって避けて通れないテーマ。</p>
+  <h4>ESG統合のアプローチ</h4>
+  <ul>
+    <li><strong>ESGインテグレーション</strong>：従来の財務分析にESG要素を統合。最も一般的</li>
+    <li><strong>ネガティブスクリーニング</strong>：特定業種（武器、タバコ等）を除外</li>
+    <li><strong>ポジティブスクリーニング</strong>：ESG評価の高い企業を選別</li>
+    <li><strong>インパクト投資</strong>：社会・環境へのポジティブなインパクトを明示的に追求</li>
+    <li><strong>エンゲージメント</strong>：投資先企業との対話を通じた改善促進</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>⚠️ グリーンウォッシュのリスク</h3>
+  <p>ESGを標榜しながら実態が伴わない「グリーンウォッシュ」は最大のリスク。規制当局の監視が強化されている。</p>
+  <ul>
+    <li><strong>EU SFDR</strong>：ファンドをArticle 6/8/9に分類。ESG開示を義務化</li>
+    <li><strong>SEC</strong>：ESGファンドの名称・開示に関するルール強化</li>
+    <li><strong>金融庁</strong>：ESGファンドの実態調査、監督指針の策定</li>
+  </ul>
+  <div class="highlight"><p>💎 PMはESGファンドの設計時に「運用プロセスにおけるESGの具体的な活用方法」を明確にし、目論見書・月報で一貫して開示する必要がある。曖昧なESGラベルは規制リスクとレピュテーションリスクを招く。</p></div>
+</div>
+
+<div class="card">
+  <h3>📊 テーマ型ファンドの設計</h3>
+  <ul>
+    <li><strong>テーマの選定</strong>：AI、半導体、クリーンエネルギー、高齢化等。構造的な成長ストーリーが必要</li>
+    <li><strong>投資ユニバース</strong>：テーマに沿った銘柄をどう定義するか。狭すぎると分散不足、広すぎると差別化不足</li>
+    <li><strong>タイミングリスク</strong>：テーマの旬が過ぎると資金流出。ローンチタイミングが重要</li>
+    <li><strong>ベンチマーク</strong>：テーマ型は適切なベンチマークがないことが多い。評価が難しい</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h4>🧪 確認クイズ</h4>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:10px">EU SFDRにおいて、サステナビリティを投資目的とするファンドの分類は？</p>
+  <button class="quiz-option" data-correct="false">Article 6</button>
+  <button class="quiz-option" data-correct="false">Article 8</button>
+  <button class="quiz-option" data-correct="true">Article 9</button>
+  <button class="quiz-option" data-correct="false">Article 12</button>
+  <div class="quiz-feedback">✅ Article 9は「サステナブル投資を目的とするファンド」で最も厳格な分類。Article 8は「環境・社会特性を促進するファンド」、Article 6はESG開示のみ義務。</div>
+</div>
+
+<div class="nav-bottom">
+  <a class="nav-btn prev" href="i6-institutional.html">← 前へ</a>
+  <a class="nav-btn next" href="a1-product-lifecycle.html">次へ: ライフサイクル →</a>
+</div>
+<div style="text-align:center;padding:30px 0;font-size:11px;color:var(--sub)">Academy — Asset Management PM</div>
+</div>
+<script>
+document.querySelectorAll('.quiz').forEach(q=>{const opts=q.querySelectorAll('.quiz-option');const fb=q.querySelector('.quiz-feedback');opts.forEach(o=>{o.addEventListener('click',()=>{if(q.dataset.answered)return;q.dataset.answered='true';opts.forEach(x=>x.style.pointerEvents='none');if(o.dataset.correct==='true'){o.classList.add('correct')}else{o.classList.add('wrong');opts.forEach(x=>{if(x.dataset.correct==='true')x.classList.add('correct')})}if(fb)fb.style.display='block'})})});
+</script>
+</body>
+</html>

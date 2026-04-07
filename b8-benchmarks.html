@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ベンチマークとインデックス — Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--accent:#2c2c2e;--blue:#0071e3;--green:#34c759;--orange:#ff9f0a;--red:#ff453a;--purple:#bf5af2;--teal:#5ac8fa;--radius:16px;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+body{font-family:'DM Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:430px;margin:0 auto;padding:0 20px 60px}
+.back{display:inline-flex;align-items:center;gap:4px;padding:16px 0;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.level-badge{display:inline-block;padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;color:#fff;margin-bottom:10px}
+.page-title{font-size:22px;font-weight:700;margin-bottom:4px;letter-spacing:-0.5px;line-height:1.3}
+.page-sub{font-size:12px;color:var(--sub);margin-bottom:24px;line-height:1.5}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h4{font-size:13px;font-weight:700;margin:12px 0 6px;color:var(--accent)}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.75}
+.card ul,.card ol{padding-left:18px;margin:8px 0}
+.card li{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:4px}
+.card li strong{color:var(--text)}
+.formula{background:#f0f0f2;border-radius:10px;padding:14px;margin:12px 0;font-family:'DM Sans',monospace;font-size:13px;font-weight:600;text-align:center;line-height:1.6}
+.highlight{border-radius:0 10px 10px 0;padding:12px 14px;margin:12px 0}
+.highlight p{color:var(--text)!important;font-weight:500;font-size:12.5px;line-height:1.75}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.stat-box{background:var(--bg);border-radius:10px;padding:12px;text-align:center}
+.stat-val{font-size:20px;font-weight:700}
+.stat-label{font-size:10px;color:var(--sub);margin-top:2px}
+.table-wrap{overflow-x:auto;margin:12px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:300px}
+th{background:var(--accent);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #f0f0f2}
+tr:nth-child(even) td{background:#fafafa}
+.quiz{background:var(--card);border:2px solid #e5e5e7;border-radius:var(--radius);padding:18px;margin:14px 0}
+.quiz h4{font-size:13px;font-weight:700;margin-bottom:10px}
+.quiz-option{display:block;width:100%;padding:10px 14px;margin:6px 0;background:var(--bg);border:1.5px solid transparent;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;text-align:left;transition:all 0.2s}
+.quiz-option:hover{border-color:#ccc}
+.quiz-option.correct{background:#34c75920;border-color:#34c759}
+.quiz-option.wrong{background:#ff453a15;border-color:#ff453a}
+.quiz-feedback{font-size:12px;color:var(--sub);margin-top:8px;display:none;line-height:1.6}
+.nav-bottom{display:flex;gap:10px;margin-top:30px}
+.nav-btn{flex:1;padding:14px;border-radius:12px;text-align:center;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-btn.prev{background:var(--card);color:var(--text);box-shadow:var(--shadow)}
+.nav-btn.next{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card,.quiz{animation:fadeUp 0.4s ease both}
+
+.level-badge{background:#34c759}
+.stat-val{color:#34c759}
+.highlight{background:#34c75912;border-left:3px solid #34c759}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="index.html">‹ ホームに戻る</a>
+<div class="level-badge">入門編 #8</div>
+<div class="page-title">ベンチマークとインデックス</div>
+<div class="page-sub">TOPIX・MSCI・Bloomberg——指数の仕組みと選定がファンドに与える影響</div>
+
+<div class="card">
+  <h3>📐 ベンチマークとは</h3>
+  <p>ベンチマークは「ファンドの運用成果を測る物差し」。アクティブファンドでは超過リターンの基準、パッシブファンドでは連動対象となる。PMにとってベンチマーク選定は商品設計の根幹。</p>
+  <h4>主要インデックス</h4>
+  <div class="table-wrap"><table>
+    <tr><th>アセット</th><th>インデックス</th><th>提供者</th><th>特徴</th></tr>
+    <tr><td>日本株</td><td>TOPIX</td><td>JPX</td><td>東証上場全銘柄。時価総額加重</td></tr>
+    <tr><td>日本株</td><td>日経225</td><td>日経</td><td>225銘柄。株価加重平均</td></tr>
+    <tr><td>先進国株</td><td>MSCI ACWI (ex Japan)</td><td>MSCI</td><td>先進国+新興国。グローバル株の標準</td></tr>
+    <tr><td>米国株</td><td>S&P 500</td><td>S&P DJI</td><td>米国大型500銘柄</td></tr>
+    <tr><td>債券</td><td>Bloomberg Agg</td><td>Bloomberg</td><td>投資適格債の総合指数</td></tr>
+    <tr><td>新興国株</td><td>MSCI EM</td><td>MSCI</td><td>新興国株式の標準指数</td></tr>
+  </table></div>
+</div>
+
+<div class="card">
+  <h3>💰 インデックスライセンス</h3>
+  <p>インデックスの利用にはライセンス料が必要。PMはコスト管理の一環として理解すべき。</p>
+  <ul>
+    <li><strong>ライセンス料の構造</strong>：基本料＋AUM連動料（2-5bp程度）。大規模ファンドではAUM連動が大きなコスト</li>
+    <li><strong>カスタムインデックス</strong>：自社独自の指数を作成しライセンスコストを回避する動きも</li>
+    <li><strong>ベンチマーク変更リスク</strong>：指数の銘柄入替え・算出方法変更がファンドのパフォーマンスに影響</li>
+  </ul>
+  <div class="highlight"><p>💎 ベンチマーク選定は「ファンドのアイデンティティ」を決める行為。一度選定すると変更は困難（信託約款変更が必要）なため、PMは設定時に慎重に判断する必要がある。</p></div>
+</div>
+
+<div class="quiz">
+  <h4>🧪 確認クイズ</h4>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:10px">グローバル株式のベンチマークとして最も広く使われているのは？</p>
+  <button class="quiz-option" data-correct="false">日経225</button>
+  <button class="quiz-option" data-correct="false">S&P 500</button>
+  <button class="quiz-option" data-correct="true">MSCI ACWI（またはMSCI World）</button>
+  <button class="quiz-option" data-correct="false">TOPIX</button>
+  <div class="quiz-feedback">✅ MSCI ACWI（All Country World Index）は先進国＋新興国をカバーするグローバル株式の標準ベンチマーク。「オルカン」（eMAXIS Slim全世界株式）のベンチマークもMSCI ACWI。</div>
+</div>
+
+<div class="nav-bottom">
+  <a class="nav-btn prev" href="b7-distribution.html">← 前へ</a>
+  <a class="nav-btn next" href="i1-product-design.html">次へ: 商品設計 →</a>
+</div>
+<div style="text-align:center;padding:30px 0;font-size:11px;color:var(--sub)">Academy — Asset Management PM</div>
+</div>
+<script>
+document.querySelectorAll('.quiz').forEach(q=>{const opts=q.querySelectorAll('.quiz-option');const fb=q.querySelector('.quiz-feedback');opts.forEach(o=>{o.addEventListener('click',()=>{if(q.dataset.answered)return;q.dataset.answered='true';opts.forEach(x=>x.style.pointerEvents='none');if(o.dataset.correct==='true'){o.classList.add('correct')}else{o.classList.add('wrong');opts.forEach(x=>{if(x.dataset.correct==='true')x.classList.add('correct')})}if(fb)fb.style.display='block'})})});
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>競合分析とポジショニング — Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--accent:#2c2c2e;--blue:#0071e3;--green:#34c759;--orange:#ff9f0a;--red:#ff453a;--purple:#bf5af2;--teal:#5ac8fa;--radius:16px;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+body{font-family:'DM Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:430px;margin:0 auto;padding:0 20px 60px}
+.back{display:inline-flex;align-items:center;gap:4px;padding:16px 0;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.level-badge{display:inline-block;padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;color:#fff;margin-bottom:10px}
+.page-title{font-size:22px;font-weight:700;margin-bottom:4px;letter-spacing:-0.5px;line-height:1.3}
+.page-sub{font-size:12px;color:var(--sub);margin-bottom:24px;line-height:1.5}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h4{font-size:13px;font-weight:700;margin:12px 0 6px;color:var(--accent)}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.75}
+.card ul,.card ol{padding-left:18px;margin:8px 0}
+.card li{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:4px}
+.card li strong{color:var(--text)}
+.formula{background:#f0f0f2;border-radius:10px;padding:14px;margin:12px 0;font-family:'DM Sans',monospace;font-size:13px;font-weight:600;text-align:center;line-height:1.6}
+.highlight{border-radius:0 10px 10px 0;padding:12px 14px;margin:12px 0}
+.highlight p{color:var(--text)!important;font-weight:500;font-size:12.5px;line-height:1.75}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.stat-box{background:var(--bg);border-radius:10px;padding:12px;text-align:center}
+.stat-val{font-size:20px;font-weight:700}
+.stat-label{font-size:10px;color:var(--sub);margin-top:2px}
+.table-wrap{overflow-x:auto;margin:12px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:300px}
+th{background:var(--accent);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #f0f0f2}
+tr:nth-child(even) td{background:#fafafa}
+.quiz{background:var(--card);border:2px solid #e5e5e7;border-radius:var(--radius);padding:18px;margin:14px 0}
+.quiz h4{font-size:13px;font-weight:700;margin-bottom:10px}
+.quiz-option{display:block;width:100%;padding:10px 14px;margin:6px 0;background:var(--bg);border:1.5px solid transparent;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;text-align:left;transition:all 0.2s}
+.quiz-option:hover{border-color:#ccc}
+.quiz-option.correct{background:#34c75920;border-color:#34c759}
+.quiz-option.wrong{background:#ff453a15;border-color:#ff453a}
+.quiz-feedback{font-size:12px;color:var(--sub);margin-top:8px;display:none;line-height:1.6}
+.nav-bottom{display:flex;gap:10px;margin-top:30px}
+.nav-btn{flex:1;padding:14px;border-radius:12px;text-align:center;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-btn.prev{background:var(--card);color:var(--text);box-shadow:var(--shadow)}
+.nav-btn.next{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card,.quiz{animation:fadeUp 0.4s ease both}
+
+.level-badge{background:#ff9f0a}
+.stat-val{color:#ff9f0a}
+.highlight{background:#ff9f0a12;border-left:3px solid #ff9f0a}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="index.html">‹ ホームに戻る</a>
+<div class="level-badge">中級編 #5</div>
+<div class="page-title">競合分析とポジショニング</div>
+<div class="page-sub">AUM・フロー・シェア分析——市場での自社商品のポジションを把握・改善する</div>
+
+<div class="card">
+  <h3>🔍 競合分析の基本フレーム</h3>
+  <h4>① AUM・フロー分析</h4>
+  <ul>
+    <li><strong>AUM推移</strong>：競合ファンドとの純資産残高比較。成長率の優劣</li>
+    <li><strong>純資金フロー</strong>：資金流出入のトレンド。パフォーマンスとの相関分析</li>
+    <li><strong>マーケットシェア</strong>：カテゴリー内でのシェア推移。シェア拡大/縮小の要因分析</li>
+  </ul>
+  <h4>② パフォーマンス比較</h4>
+  <ul>
+    <li><strong>Morningstarカテゴリー</strong>：カテゴリー内順位、スターレーティング</li>
+    <li><strong>ピアグループ比較</strong>：リターン、リスク、シャープレシオの相対評価</li>
+    <li><strong>ローリングリターン</strong>：3年・5年の実績推移で安定性を評価</li>
+  </ul>
+  <h4>③ フィー比較</h4>
+  <ul>
+    <li><strong>信託報酬の水準</strong>：カテゴリー平均、最安値との比較</li>
+    <li><strong>実質コスト</strong>：信託報酬＋売買手数料＋その他コスト</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>📊 ポジショニングマップ</h3>
+  <p>PMは「フィー（横軸）× パフォーマンス（縦軸）」の2軸マップで自社商品のポジションを可視化する。</p>
+  <div class="formula">理想ポジション = 高パフォーマンス × 低フィー（左上象限）</div>
+  <ul>
+    <li><strong>左上（高パフォ・低コスト）</strong>：最強ポジション。eMAXIS Slim等のインデックス商品</li>
+    <li><strong>右上（高パフォ・高コスト）</strong>：αで正当化できるアクティブ。差別化が明確</li>
+    <li><strong>左下（低パフォ・低コスト）</strong>：TE問題のあるインデックスファンド</li>
+    <li><strong>右下（低パフォ・高コスト）</strong>：最も厳しい。統廃合の候補</li>
+  </ul>
+  <div class="highlight"><p>💎 PMは四半期ごとにポジショニングマップを更新し、自社商品の位置の変化を経営に報告すべき。ポジションの悪化が続く場合、フィー引下げや運用改善のアクションにつなげる。</p></div>
+</div>
+
+<div class="quiz">
+  <h4>🧪 確認クイズ</h4>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:10px">PMが競合分析で最も重視すべきデータソースは？</p>
+  <button class="quiz-option" data-correct="false">SNSのフォロワー数</button>
+  <button class="quiz-option" data-correct="true">Morningstar等の純資金フロー・パフォーマンスデータ</button>
+  <button class="quiz-option" data-correct="false">運用会社の株価</button>
+  <button class="quiz-option" data-correct="false">新聞記事の件数</button>
+  <div class="quiz-feedback">✅ Morningstar、Lipper、投信協会等が提供する純資金フロー・パフォーマンスデータは競合分析の基本。AUMの増減は「投資家の投票」であり、市場の評価を最も正直に反映する。</div>
+</div>
+
+<div class="nav-bottom">
+  <a class="nav-btn prev" href="i4-sales-strategy.html">← 前へ</a>
+  <a class="nav-btn next" href="i6-institutional.html">次へ: 機関投資家 →</a>
+</div>
+<div style="text-align:center;padding:30px 0;font-size:11px;color:var(--sub)">Academy — Asset Management PM</div>
+</div>
+<script>
+document.querySelectorAll('.quiz').forEach(q=>{const opts=q.querySelectorAll('.quiz-option');const fb=q.querySelector('.quiz-feedback');opts.forEach(o=>{o.addEventListener('click',()=>{if(q.dataset.answered)return;q.dataset.answered='true';opts.forEach(x=>x.style.pointerEvents='none');if(o.dataset.correct==='true'){o.classList.add('correct')}else{o.classList.add('wrong');opts.forEach(x=>{if(x.dataset.correct==='true')x.classList.add('correct')})}if(fb)fb.style.display='block'})})});
+</script>
+</body>
+</html>

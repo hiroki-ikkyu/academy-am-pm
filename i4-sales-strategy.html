@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>販売戦略とチャネル管理 — Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--accent:#2c2c2e;--blue:#0071e3;--green:#34c759;--orange:#ff9f0a;--red:#ff453a;--purple:#bf5af2;--teal:#5ac8fa;--radius:16px;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+body{font-family:'DM Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:430px;margin:0 auto;padding:0 20px 60px}
+.back{display:inline-flex;align-items:center;gap:4px;padding:16px 0;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.level-badge{display:inline-block;padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;color:#fff;margin-bottom:10px}
+.page-title{font-size:22px;font-weight:700;margin-bottom:4px;letter-spacing:-0.5px;line-height:1.3}
+.page-sub{font-size:12px;color:var(--sub);margin-bottom:24px;line-height:1.5}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h4{font-size:13px;font-weight:700;margin:12px 0 6px;color:var(--accent)}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.75}
+.card ul,.card ol{padding-left:18px;margin:8px 0}
+.card li{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:4px}
+.card li strong{color:var(--text)}
+.formula{background:#f0f0f2;border-radius:10px;padding:14px;margin:12px 0;font-family:'DM Sans',monospace;font-size:13px;font-weight:600;text-align:center;line-height:1.6}
+.highlight{border-radius:0 10px 10px 0;padding:12px 14px;margin:12px 0}
+.highlight p{color:var(--text)!important;font-weight:500;font-size:12.5px;line-height:1.75}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.stat-box{background:var(--bg);border-radius:10px;padding:12px;text-align:center}
+.stat-val{font-size:20px;font-weight:700}
+.stat-label{font-size:10px;color:var(--sub);margin-top:2px}
+.table-wrap{overflow-x:auto;margin:12px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:300px}
+th{background:var(--accent);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #f0f0f2}
+tr:nth-child(even) td{background:#fafafa}
+.quiz{background:var(--card);border:2px solid #e5e5e7;border-radius:var(--radius);padding:18px;margin:14px 0}
+.quiz h4{font-size:13px;font-weight:700;margin-bottom:10px}
+.quiz-option{display:block;width:100%;padding:10px 14px;margin:6px 0;background:var(--bg);border:1.5px solid transparent;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;text-align:left;transition:all 0.2s}
+.quiz-option:hover{border-color:#ccc}
+.quiz-option.correct{background:#34c75920;border-color:#34c759}
+.quiz-option.wrong{background:#ff453a15;border-color:#ff453a}
+.quiz-feedback{font-size:12px;color:var(--sub);margin-top:8px;display:none;line-height:1.6}
+.nav-bottom{display:flex;gap:10px;margin-top:30px}
+.nav-btn{flex:1;padding:14px;border-radius:12px;text-align:center;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-btn.prev{background:var(--card);color:var(--text);box-shadow:var(--shadow)}
+.nav-btn.next{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card,.quiz{animation:fadeUp 0.4s ease both}
+
+.level-badge{background:#ff9f0a}
+.stat-val{color:#ff9f0a}
+.highlight{background:#ff9f0a12;border-left:3px solid #ff9f0a}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="index.html">‹ ホームに戻る</a>
+<div class="level-badge">中級編 #4</div>
+<div class="page-title">販売戦略とチャネル管理</div>
+<div class="page-sub">販社交渉・販促資料・研修——PMの販売支援業務の実務</div>
+
+<div class="card">
+  <h3>🤝 販社との関係構築</h3>
+  <p>PMにとって販売会社（販社）は最も重要な外部パートナー。新商品の採用から販売促進まで、販社との関係管理がAUM成長の鍵。</p>
+  <h4>販社選定・採用のプロセス</h4>
+  <ul>
+    <li><strong>販社の選定基準</strong>：販売力（預かり資産、営業員数）、ターゲット顧客との親和性、販売姿勢</li>
+    <li><strong>商品採用</strong>：販社の「商品選定委員会」に提案。運用実績、フィー水準、差別化ポイントをプレゼン</li>
+    <li><strong>代行手数料交渉</strong>：信託報酬のうち販社に配分する比率を交渉。販売力のある販社ほど交渉力が強い</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>📚 販売支援の実務</h3>
+  <ul>
+    <li><strong>販社研修</strong>：営業員向けに商品特性・運用戦略を説明。対面＋Web開催</li>
+    <li><strong>販促資料</strong>：商品パンフレット、セールスガイド、FAQ。コンプラ審査を通す</li>
+    <li><strong>タイムリーな情報提供</strong>：市場急変時のコメント、運用状況アップデート</li>
+    <li><strong>キャンペーン企画</strong>：販売インセンティブ設計（例：期間限定の購入時手数料割引）</li>
+  </ul>
+  <div class="highlight"><p>💎 「良い商品を作れば売れる」わけではない。PMは販社営業員が「この商品を顧客に薦めたい」と思うような情報提供とサポートを提供し続ける必要がある。販社の「味方」になることが重要。</p></div>
+</div>
+
+<div class="card">
+  <h3>📊 販売実績のモニタリング</h3>
+  <ul>
+    <li><strong>KPI</strong>：純資金流入額、グロス販売額、解約率、販社別シェア</li>
+    <li><strong>分析</strong>：販社別・チャネル別の販売トレンド、競合商品との比較</li>
+    <li><strong>アクション</strong>：低調な販社へのフォローアップ、好調な販社の成功要因分析</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h4>🧪 確認クイズ</h4>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:10px">販社が新しいファンドを自社のラインアップに採用する際、PMが提案する場は？</p>
+  <button class="quiz-option" data-correct="false">金融庁の審査会</button>
+  <button class="quiz-option" data-correct="true">販社の商品選定委員会</button>
+  <button class="quiz-option" data-correct="false">投資信託協会の承認会</button>
+  <button class="quiz-option" data-correct="false">ファンドマネジャーの面接</button>
+  <div class="quiz-feedback">✅ 各販社は社内に商品選定委員会（またはファンド選定委員会）を持ち、採用するファンドを審査する。PMはこの場で商品の差別化ポイント、運用実績、フィー競争力をプレゼンする。</div>
+</div>
+
+<div class="nav-bottom">
+  <a class="nav-btn prev" href="i3-compliance-deep.html">← 前へ</a>
+  <a class="nav-btn next" href="i5-competitive.html">次へ: 競合分析 →</a>
+</div>
+<div style="text-align:center;padding:30px 0;font-size:11px;color:var(--sub)">Academy — Asset Management PM</div>
+</div>
+<script>
+document.querySelectorAll('.quiz').forEach(q=>{const opts=q.querySelectorAll('.quiz-option');const fb=q.querySelector('.quiz-feedback');opts.forEach(o=>{o.addEventListener('click',()=>{if(q.dataset.answered)return;q.dataset.answered='true';opts.forEach(x=>x.style.pointerEvents='none');if(o.dataset.correct==='true'){o.classList.add('correct')}else{o.classList.add('wrong');opts.forEach(x=>{if(x.dataset.correct==='true')x.classList.add('correct')})}if(fb)fb.style.display='block'})})});
+</script>
+</body>
+</html>

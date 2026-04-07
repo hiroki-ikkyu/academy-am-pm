@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>グローバルトレンドと規制動向 — Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--accent:#2c2c2e;--blue:#0071e3;--green:#34c759;--orange:#ff9f0a;--red:#ff453a;--purple:#bf5af2;--teal:#5ac8fa;--radius:16px;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+body{font-family:'DM Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:430px;margin:0 auto;padding:0 20px 60px}
+.back{display:inline-flex;align-items:center;gap:4px;padding:16px 0;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.level-badge{display:inline-block;padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;color:#fff;margin-bottom:10px}
+.page-title{font-size:22px;font-weight:700;margin-bottom:4px;letter-spacing:-0.5px;line-height:1.3}
+.page-sub{font-size:12px;color:var(--sub);margin-bottom:24px;line-height:1.5}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h4{font-size:13px;font-weight:700;margin:12px 0 6px;color:var(--accent)}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.75}
+.card ul,.card ol{padding-left:18px;margin:8px 0}
+.card li{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:4px}
+.card li strong{color:var(--text)}
+.formula{background:#f0f0f2;border-radius:10px;padding:14px;margin:12px 0;font-family:'DM Sans',monospace;font-size:13px;font-weight:600;text-align:center;line-height:1.6}
+.highlight{border-radius:0 10px 10px 0;padding:12px 14px;margin:12px 0}
+.highlight p{color:var(--text)!important;font-weight:500;font-size:12.5px;line-height:1.75}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.stat-box{background:var(--bg);border-radius:10px;padding:12px;text-align:center}
+.stat-val{font-size:20px;font-weight:700}
+.stat-label{font-size:10px;color:var(--sub);margin-top:2px}
+.table-wrap{overflow-x:auto;margin:12px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:300px}
+th{background:var(--accent);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #f0f0f2}
+tr:nth-child(even) td{background:#fafafa}
+.quiz{background:var(--card);border:2px solid #e5e5e7;border-radius:var(--radius);padding:18px;margin:14px 0}
+.quiz h4{font-size:13px;font-weight:700;margin-bottom:10px}
+.quiz-option{display:block;width:100%;padding:10px 14px;margin:6px 0;background:var(--bg);border:1.5px solid transparent;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;text-align:left;transition:all 0.2s}
+.quiz-option:hover{border-color:#ccc}
+.quiz-option.correct{background:#34c75920;border-color:#34c759}
+.quiz-option.wrong{background:#ff453a15;border-color:#ff453a}
+.quiz-feedback{font-size:12px;color:var(--sub);margin-top:8px;display:none;line-height:1.6}
+.nav-bottom{display:flex;gap:10px;margin-top:30px}
+.nav-btn{flex:1;padding:14px;border-radius:12px;text-align:center;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-btn.prev{background:var(--card);color:var(--text);box-shadow:var(--shadow)}
+.nav-btn.next{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card,.quiz{animation:fadeUp 0.4s ease both}
+
+.level-badge{background:#ff453a}
+.stat-val{color:#ff453a}
+.highlight{background:#ff453a12;border-left:3px solid #ff453a}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="index.html">‹ ホームに戻る</a>
+<div class="level-badge">上級編 #3</div>
+<div class="page-title">グローバルトレンドと規制動向</div>
+<div class="page-sub">MiFID II・SEC改革・資産運用立国——グローバルな業界変革の波を読む</div>
+
+<div class="card">
+  <h3>🌍 グローバル規制の潮流</h3>
+  <h4>EU: MiFID II / SFDR</h4>
+  <ul>
+    <li><strong>MiFID II</strong>（2018年施行）：販売手数料のリベート禁止、コスト透明化、リサーチ費用の分離</li>
+    <li>影響：運用会社の収益構造に大きな変化。独立アドバイス型への移行促進</li>
+    <li><strong>SFDR</strong>：ファンドのESG分類を義務化（Article 6/8/9）。開示負担増</li>
+  </ul>
+  <h4>米国: SEC改革</h4>
+  <ul>
+    <li><strong>ファンド名称ルール</strong>：名称に含まれるテーマの投資比率80%ルールの強化</li>
+    <li><strong>ESG開示</strong>：ESGファンドの開示強化。グリーンウォッシュ対策</li>
+    <li><strong>フィー開示</strong>：手数料の比較可能性向上</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>🇯🇵 日本：資産運用立国の推進</h3>
+  <p>日本政府は「資産運用立国」を掲げ、業界改革を推進中。PMにとって大きなビジネスチャンスと構造変化。</p>
+  <ul>
+    <li><strong>新NISA</strong>：2024年開始。投資枠の恒久化・拡大で個人投資家の資金流入が加速</li>
+    <li><strong>資産運用業の高度化</strong>：金融庁が運用会社のガバナンス・運用力向上を要求</li>
+    <li><strong>プロダクトガバナンス</strong>：「顧客にふさわしい商品を設計・提供しているか」の検証強化</li>
+    <li><strong>コスト開示の強化</strong>：「見える化」の推進。実質コスト、トータルリターンの開示</li>
+    <li><strong>スチュワードシップ</strong>：機関投資家としての議決権行使・エンゲージメントの充実</li>
+  </ul>
+  <div class="highlight"><p>💎 「資産運用立国」は日本のAM業界にとって追い風。PMは新NISAの資金流入を取り込む商品設計（低コスト・長期・分散）と、プロダクトガバナンス強化の両面で対応が求められる。</p></div>
+</div>
+
+<div class="card">
+  <h3>📊 業界の構造的トレンド</h3>
+  <ul>
+    <li><strong>パッシブシフト</strong>：グローバルでパッシブのAUMシェアが50%超に。さらに拡大</li>
+    <li><strong>フィー圧縮</strong>：アクティブ株式の平均信託報酬は年率2-3bpペースで低下中</li>
+    <li><strong>業界再編</strong>：M&Aによる規模追求。大手の寡占化が進行</li>
+    <li><strong>オルタナティブ拡大</strong>：PE、インフラ、不動産ファンドへの資金シフト。高フィーで収益貢献</li>
+    <li><strong>テクノロジー</strong>：AI活用（運用・リスク管理）、データ分析、デジタルマーケティング</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h4>🧪 確認クイズ</h4>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:10px">EU MiFID IIの主要な影響の一つは？</p>
+  <button class="quiz-option" data-correct="false">インデックスファンドの禁止</button>
+  <button class="quiz-option" data-correct="true">販売手数料のリベート禁止とコスト透明化</button>
+  <button class="quiz-option" data-correct="false">ESGファンドのみ販売可能</button>
+  <button class="quiz-option" data-correct="false">運用会社の国有化</button>
+  <div class="quiz-feedback">✅ MiFID IIは販売手数料のリベート（キックバック）を禁止し、コスト透明化を推進。これにより、英国等ではアドバイス料を顧客が直接支払うモデルに移行し、低コスト商品の普及を後押しした。</div>
+</div>
+
+<div class="nav-bottom">
+  <a class="nav-btn prev" href="a2-pricing-profitability.html">← 前へ</a>
+  <a class="nav-btn next" href="a4-digital-innovation.html">次へ: デジタル →</a>
+</div>
+<div style="text-align:center;padding:30px 0;font-size:11px;color:var(--sub)">Academy — Asset Management PM</div>
+</div>
+<script>
+document.querySelectorAll('.quiz').forEach(q=>{const opts=q.querySelectorAll('.quiz-option');const fb=q.querySelector('.quiz-feedback');opts.forEach(o=>{o.addEventListener('click',()=>{if(q.dataset.answered)return;q.dataset.answered='true';opts.forEach(x=>x.style.pointerEvents='none');if(o.dataset.correct==='true'){o.classList.add('correct')}else{o.classList.add('wrong');opts.forEach(x=>{if(x.dataset.correct==='true')x.classList.add('correct')})}if(fb)fb.style.display='block'})})});
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ファンドの種類と仕組み — Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--accent:#2c2c2e;--blue:#0071e3;--green:#34c759;--orange:#ff9f0a;--red:#ff453a;--purple:#bf5af2;--teal:#5ac8fa;--radius:16px;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+body{font-family:'DM Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:430px;margin:0 auto;padding:0 20px 60px}
+.back{display:inline-flex;align-items:center;gap:4px;padding:16px 0;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.level-badge{display:inline-block;padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;color:#fff;margin-bottom:10px}
+.page-title{font-size:22px;font-weight:700;margin-bottom:4px;letter-spacing:-0.5px;line-height:1.3}
+.page-sub{font-size:12px;color:var(--sub);margin-bottom:24px;line-height:1.5}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h4{font-size:13px;font-weight:700;margin:12px 0 6px;color:var(--accent)}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.75}
+.card ul,.card ol{padding-left:18px;margin:8px 0}
+.card li{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:4px}
+.card li strong{color:var(--text)}
+.formula{background:#f0f0f2;border-radius:10px;padding:14px;margin:12px 0;font-family:'DM Sans',monospace;font-size:13px;font-weight:600;text-align:center;line-height:1.6}
+.highlight{border-radius:0 10px 10px 0;padding:12px 14px;margin:12px 0}
+.highlight p{color:var(--text)!important;font-weight:500;font-size:12.5px;line-height:1.75}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.stat-box{background:var(--bg);border-radius:10px;padding:12px;text-align:center}
+.stat-val{font-size:20px;font-weight:700}
+.stat-label{font-size:10px;color:var(--sub);margin-top:2px}
+.table-wrap{overflow-x:auto;margin:12px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:300px}
+th{background:var(--accent);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #f0f0f2}
+tr:nth-child(even) td{background:#fafafa}
+.quiz{background:var(--card);border:2px solid #e5e5e7;border-radius:var(--radius);padding:18px;margin:14px 0}
+.quiz h4{font-size:13px;font-weight:700;margin-bottom:10px}
+.quiz-option{display:block;width:100%;padding:10px 14px;margin:6px 0;background:var(--bg);border:1.5px solid transparent;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;text-align:left;transition:all 0.2s}
+.quiz-option:hover{border-color:#ccc}
+.quiz-option.correct{background:#34c75920;border-color:#34c759}
+.quiz-option.wrong{background:#ff453a15;border-color:#ff453a}
+.quiz-feedback{font-size:12px;color:var(--sub);margin-top:8px;display:none;line-height:1.6}
+.nav-bottom{display:flex;gap:10px;margin-top:30px}
+.nav-btn{flex:1;padding:14px;border-radius:12px;text-align:center;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-btn.prev{background:var(--card);color:var(--text);box-shadow:var(--shadow)}
+.nav-btn.next{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card,.quiz{animation:fadeUp 0.4s ease both}
+
+.level-badge{background:#34c759}
+.stat-val{color:#34c759}
+.highlight{background:#34c75912;border-left:3px solid #34c759}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="index.html">‹ ホームに戻る</a>
+<div class="level-badge">入門編 #2</div>
+<div class="page-title">ファンドの種類と仕組み</div>
+<div class="page-sub">公募投信・ETF・SMA・私募——各スキームの構造・メリット・対象顧客を理解する</div>
+
+<div class="card">
+  <h3>📋 ファンドの分類体系</h3>
+  <h4>公募 vs 私募</h4>
+  <ul>
+    <li><strong>公募ファンド</strong>：50名以上の一般投資家向け。目論見書交付義務、金融庁届出が必要</li>
+    <li><strong>私募ファンド</strong>：適格機関投資家向け（プロ私募）or 49名以下（少人数私募）。開示義務が軽い</li>
+  </ul>
+  <h4>オープンエンド vs クローズドエンド</h4>
+  <ul>
+    <li><strong>オープンエンド</strong>：投資家がいつでも購入・解約可能。日本の投信の大半</li>
+    <li><strong>クローズドエンド</strong>：設定後は追加購入不可。上場インフラファンド等</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>💰 主要ファンドスキーム</h3>
+  <div class="table-wrap"><table>
+    <tr><th>スキーム</th><th>対象</th><th>特徴</th><th>フィー水準</th></tr>
+    <tr><td>公募投信（追加型）</td><td>個人</td><td>いつでも売買可。基準価額は1日1回</td><td>0.05-1.8%</td></tr>
+    <tr><td>ETF</td><td>個人・機関</td><td>取引所でリアルタイム売買。低コスト</td><td>0.03-0.5%</td></tr>
+    <tr><td>SMA</td><td>富裕層・機関</td><td>個別口座で運用。カスタマイズ可能</td><td>0.3-1.5%</td></tr>
+    <tr><td>私募投信</td><td>機関投資家</td><td>柔軟な運用戦略。開示義務軽い</td><td>0.2-2.0%+成功報酬</td></tr>
+    <tr><td>DC専用</td><td>DC加入者</td><td>確定拠出年金専用。低コスト傾向</td><td>0.05-0.8%</td></tr>
+  </table></div>
+  <div class="highlight"><p>💎 PMは各スキームの規制要件・コスト構造・対象顧客を熟知し、「どのスキームで商品化するか」の判断ができることが必要。同じ運用戦略でも公募/私募/SMAで全く異なるビジネスになる。</p></div>
+</div>
+
+<div class="card">
+  <h3>📈 投信のスキーム構造</h3>
+  <p>日本の投信は「信託型」が主流。委託者（運用会社）→受託者（信託銀行）→受益者（投資家）の三者構造。</p>
+  <div class="formula">投資家 → [販売会社] → 受益権取得 → [ファンド（信託財産）] ← 運用指図 ← [運用会社]</div>
+  <h4>ファンド・オブ・ファンズ（FoF）</h4>
+  <ul>
+    <li>複数のファンドに投資するファンド。バランスファンドに多い</li>
+    <li>二重のフィー負担が課題（投資先ファンドの信託報酬＋FoF自体の報酬）</li>
+    <li>PMは「実質コスト」の管理と開示が重要</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h4>🧪 確認クイズ</h4>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:10px">以下のうち、取引所でリアルタイムに売買でき、一般的に最も信託報酬が低いファンドスキームは？</p>
+  <button class="quiz-option" data-correct="false">公募投信（追加型）</button>
+  <button class="quiz-option" data-correct="true">ETF</button>
+  <button class="quiz-option" data-correct="false">SMA</button>
+  <button class="quiz-option" data-correct="false">私募投信</button>
+  <div class="quiz-feedback">✅ ETFは取引所上場でリアルタイム売買可能。インデックス型が主流で信託報酬は0.03-0.5%と最も低い水準。販売会社への代行手数料が不要なため低コスト化が可能。</div>
+</div>
+
+<div class="nav-bottom">
+  <a class="nav-btn prev" href="b1-am-industry.html">← 前へ</a>
+  <a class="nav-btn next" href="b3-pm-role.html">次へ: PMの役割 →</a>
+</div>
+<div style="text-align:center;padding:30px 0;font-size:11px;color:var(--sub)">Academy — Asset Management PM</div>
+</div>
+<script>
+document.querySelectorAll('.quiz').forEach(q=>{const opts=q.querySelectorAll('.quiz-option');const fb=q.querySelector('.quiz-feedback');opts.forEach(o=>{o.addEventListener('click',()=>{if(q.dataset.answered)return;q.dataset.answered='true';opts.forEach(x=>x.style.pointerEvents='none');if(o.dataset.correct==='true'){o.classList.add('correct')}else{o.classList.add('wrong');opts.forEach(x=>{if(x.dataset.correct==='true')x.classList.add('correct')})}if(fb)fb.style.display='block'})})});
+</script>
+</body>
+</html>

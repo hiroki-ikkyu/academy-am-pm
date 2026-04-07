@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>プロダクトマネジャーの役割 — Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--accent:#2c2c2e;--blue:#0071e3;--green:#34c759;--orange:#ff9f0a;--red:#ff453a;--purple:#bf5af2;--teal:#5ac8fa;--radius:16px;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+body{font-family:'DM Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:430px;margin:0 auto;padding:0 20px 60px}
+.back{display:inline-flex;align-items:center;gap:4px;padding:16px 0;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.level-badge{display:inline-block;padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;color:#fff;margin-bottom:10px}
+.page-title{font-size:22px;font-weight:700;margin-bottom:4px;letter-spacing:-0.5px;line-height:1.3}
+.page-sub{font-size:12px;color:var(--sub);margin-bottom:24px;line-height:1.5}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h4{font-size:13px;font-weight:700;margin:12px 0 6px;color:var(--accent)}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.75}
+.card ul,.card ol{padding-left:18px;margin:8px 0}
+.card li{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:4px}
+.card li strong{color:var(--text)}
+.formula{background:#f0f0f2;border-radius:10px;padding:14px;margin:12px 0;font-family:'DM Sans',monospace;font-size:13px;font-weight:600;text-align:center;line-height:1.6}
+.highlight{border-radius:0 10px 10px 0;padding:12px 14px;margin:12px 0}
+.highlight p{color:var(--text)!important;font-weight:500;font-size:12.5px;line-height:1.75}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.stat-box{background:var(--bg);border-radius:10px;padding:12px;text-align:center}
+.stat-val{font-size:20px;font-weight:700}
+.stat-label{font-size:10px;color:var(--sub);margin-top:2px}
+.table-wrap{overflow-x:auto;margin:12px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:300px}
+th{background:var(--accent);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #f0f0f2}
+tr:nth-child(even) td{background:#fafafa}
+.quiz{background:var(--card);border:2px solid #e5e5e7;border-radius:var(--radius);padding:18px;margin:14px 0}
+.quiz h4{font-size:13px;font-weight:700;margin-bottom:10px}
+.quiz-option{display:block;width:100%;padding:10px 14px;margin:6px 0;background:var(--bg);border:1.5px solid transparent;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;text-align:left;transition:all 0.2s}
+.quiz-option:hover{border-color:#ccc}
+.quiz-option.correct{background:#34c75920;border-color:#34c759}
+.quiz-option.wrong{background:#ff453a15;border-color:#ff453a}
+.quiz-feedback{font-size:12px;color:var(--sub);margin-top:8px;display:none;line-height:1.6}
+.nav-bottom{display:flex;gap:10px;margin-top:30px}
+.nav-btn{flex:1;padding:14px;border-radius:12px;text-align:center;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-btn.prev{background:var(--card);color:var(--text);box-shadow:var(--shadow)}
+.nav-btn.next{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card,.quiz{animation:fadeUp 0.4s ease both}
+
+.level-badge{background:#34c759}
+.stat-val{color:#34c759}
+.highlight{background:#34c75912;border-left:3px solid #34c759}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="index.html">‹ ホームに戻る</a>
+<div class="level-badge">入門編 #3</div>
+<div class="page-title">プロダクトマネジャーの役割</div>
+<div class="page-sub">PMの業務範囲・必要スキル・キャリアパス——資産運用会社の中でのPMの立ち位置</div>
+
+<div class="card">
+  <h3>🎯 PMとは何か</h3>
+  <p>プロダクトマネジャー（PM）は、運用会社において金融商品の「企画→開発→販売支援→管理→統廃合」のライフサイクル全体を統括する役割。運用チーム、コンプライアンス、営業、マーケティングの「ハブ」として機能する。</p>
+  <h4>PMの5大業務領域</h4>
+  <ul>
+    <li><strong>① 商品企画・設計</strong>：市場ニーズの分析、新商品コンセプト立案、フィー設計</li>
+    <li><strong>② 規制対応</strong>：目論見書作成、届出対応、信託約款の管理</li>
+    <li><strong>③ 販売支援</strong>：販社向け勉強会、販促資料作成、セールスサポート</li>
+    <li><strong>④ パフォーマンス管理</strong>：運用実績モニタリング、月報・レポート作成</li>
+    <li><strong>⑤ 競合・市場分析</strong>：AUMフロー分析、競合ポジショニング、トレンド把握</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>🔧 PMに必要なスキルセット</h3>
+  <div class="table-wrap"><table>
+    <tr><th>スキル</th><th>内容</th><th>重要度</th></tr>
+    <tr><td>金融知識</td><td>運用理論、商品知識、市場構造の理解</td><td>◎</td></tr>
+    <tr><td>規制知識</td><td>金商法、投信法、コンプライアンス</td><td>◎</td></tr>
+    <tr><td>分析力</td><td>パフォーマンス分析、データ分析、Excel/BI</td><td>◎</td></tr>
+    <tr><td>コミュニケーション</td><td>社内外との調整、プレゼンテーション</td><td>◎</td></tr>
+    <tr><td>プロジェクト管理</td><td>新商品ローンチ、複数施策の並行管理</td><td>○</td></tr>
+    <tr><td>マーケティング</td><td>販促企画、ブランディング、デジタル活用</td><td>○</td></tr>
+  </table></div>
+</div>
+
+<div class="card">
+  <h3>🏗️ PMの組織内ポジション</h3>
+  <p>PMは運用会社内で以下のチームと密接に連携する：</p>
+  <ul>
+    <li><strong>運用チーム</strong>：パフォーマンスの説明、新戦略の商品化検討</li>
+    <li><strong>営業チーム</strong>：販社ニーズの把握、販売実績の分析</li>
+    <li><strong>コンプライアンス</strong>：目論見書レビュー、広告審査、規制対応</li>
+    <li><strong>マーケティング</strong>：販促資料、Webコンテンツ、セミナー企画</li>
+    <li><strong>オペレーション</strong>：ファンド設定・変更の実務、基準価額管理</li>
+  </ul>
+  <div class="highlight"><p>💎 優秀なPMは「ミニCEO」。一つのプロダクトのP/L責任を持ち、社内外の全ステークホルダーを巻き込んで商品の成長を実現する。</p></div>
+</div>
+
+<div class="quiz">
+  <h4>🧪 確認クイズ</h4>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:10px">プロダクトマネジャーの最も重要な役割は？</p>
+  <button class="quiz-option" data-correct="false">ファンドの運用判断（銘柄選択）</button>
+  <button class="quiz-option" data-correct="false">投資家への直接販売</button>
+  <button class="quiz-option" data-correct="true">商品のライフサイクル全体を統括するハブ機能</button>
+  <button class="quiz-option" data-correct="false">法規制の制定</button>
+  <div class="quiz-feedback">✅ PMは運用判断（ファンドマネジャーの領域）ではなく、商品の企画→販売支援→管理→統廃合のライフサイクル全体を統括する。社内の運用・営業・コンプラ・マーケを繋ぐハブ機能が本質。</div>
+</div>
+
+<div class="nav-bottom">
+  <a class="nav-btn prev" href="b2-fund-types.html">← 前へ</a>
+  <a class="nav-btn next" href="b4-regulation-basics.html">次へ: 規制の基礎 →</a>
+</div>
+<div style="text-align:center;padding:30px 0;font-size:11px;color:var(--sub)">Academy — Asset Management PM</div>
+</div>
+<script>
+document.querySelectorAll('.quiz').forEach(q=>{const opts=q.querySelectorAll('.quiz-option');const fb=q.querySelector('.quiz-feedback');opts.forEach(o=>{o.addEventListener('click',()=>{if(q.dataset.answered)return;q.dataset.answered='true';opts.forEach(x=>x.style.pointerEvents='none');if(o.dataset.correct==='true'){o.classList.add('correct')}else{o.classList.add('wrong');opts.forEach(x=>{if(x.dataset.correct==='true')x.classList.add('correct')})}if(fb)fb.style.display='block'})})});
+</script>
+</body>
+</html>
