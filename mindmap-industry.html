@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>資産運用業界 全体構造マップ — Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--accent:#2c2c2e;--blue:#0071e3;--radius:16px;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+body{font-family:'DM Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:430px;margin:0 auto;padding:0 20px 60px}
+.back{display:inline-flex;align-items:center;gap:4px;padding:16px 0;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.page-title{font-size:20px;font-weight:700;margin-bottom:4px;letter-spacing:-0.5px}
+.page-sub{font-size:12px;color:var(--sub);margin-bottom:20px;line-height:1.5}
+.map-container{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);margin-bottom:16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.75}
+.card ul{padding-left:18px;margin:8px 0}
+.card li{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:4px}
+.card li strong{color:var(--text)}
+.expand-btn{display:block;width:100%;padding:10px;background:var(--bg);border:none;border-radius:10px;font-size:12px;font-weight:600;color:var(--blue);cursor:pointer;margin-top:8px;font-family:inherit}
+.expand-content{display:none;margin-top:12px}
+.expand-content.open{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card,.map-container{animation:fadeUp 0.4s ease both}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="index.html">‹ ホームに戻る</a>
+<div class="page-title">🗺️ 資産運用業界 全体構造マップ</div>
+<div class="page-sub">運用会社→販売会社→投資家のバリューチェーン、規制、フィー構造を一枚で俯瞰</div>
+
+<div class="map-container">
+<svg viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:500px">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#86868b"/></marker>
+  </defs>
+  <!-- Center -->
+  <rect x="210" y="220" width="180" height="60" rx="14" fill="#2c2c2e"/>
+  <text x="300" y="248" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="DM Sans,Noto Sans JP">資産運用会社</text>
+  <text x="300" y="264" text-anchor="middle" fill="#aaa" font-size="9" font-family="DM Sans,Noto Sans JP">Asset Manager</text>
+
+  <!-- Top: Investors -->
+  <rect x="210" y="30" width="180" height="50" rx="12" fill="#0071e3"/>
+  <text x="300" y="55" text-anchor="middle" fill="#fff" font-size="12" font-weight="600" font-family="DM Sans,Noto Sans JP">投資家（個人・機関）</text>
+  <text x="300" y="70" text-anchor="middle" fill="#cce4ff" font-size="9" font-family="DM Sans,Noto Sans JP">リテール / 年金 / 保険 / 大学</text>
+  <line x1="300" y1="80" x2="300" y2="220" stroke="#86868b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="310" y="150" font-size="9" fill="#86868b" font-family="DM Sans">資金</text>
+
+  <!-- Left: Distributor -->
+  <rect x="10" y="225" width="160" height="50" rx="12" fill="#34c759"/>
+  <text x="90" y="250" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="DM Sans,Noto Sans JP">販売会社（証券・銀行）</text>
+  <text x="90" y="264" text-anchor="middle" fill="#c8f7d6" font-size="9" font-family="DM Sans,Noto Sans JP">代行手数料</text>
+  <line x1="170" y1="250" x2="210" y2="250" stroke="#86868b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Right: Trustee -->
+  <rect x="430" y="225" width="160" height="50" rx="12" fill="#ff9f0a"/>
+  <text x="510" y="250" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="DM Sans,Noto Sans JP">受託銀行（信託）</text>
+  <text x="510" y="264" text-anchor="middle" fill="#fff3d6" font-size="9" font-family="DM Sans,Noto Sans JP">資産管理・基準価額算出</text>
+  <line x1="390" y1="250" x2="430" y2="250" stroke="#86868b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Bottom left: Regulator -->
+  <rect x="40" y="380" width="150" height="50" rx="12" fill="#ff453a"/>
+  <text x="115" y="405" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="DM Sans,Noto Sans JP">金融庁・投信協会</text>
+  <text x="115" y="419" text-anchor="middle" fill="#ffd6d4" font-size="9" font-family="DM Sans,Noto Sans JP">金商法 / 投信法 / 適合性</text>
+  <line x1="200" y1="390" x2="260" y2="280" stroke="#ff453a" stroke-width="1" stroke-dasharray="4"/>
+
+  <!-- Bottom right: Fee Flow -->
+  <rect x="400" y="380" width="160" height="50" rx="12" fill="#bf5af2"/>
+  <text x="480" y="405" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="DM Sans,Noto Sans JP">フィー構造</text>
+  <text x="480" y="419" text-anchor="middle" fill="#ecd6ff" font-size="9" font-family="DM Sans,Noto Sans JP">信託報酬 = 委託+販売+受託</text>
+  <line x1="400" y1="400" x2="340" y2="280" stroke="#bf5af2" stroke-width="1" stroke-dasharray="4"/>
+
+  <!-- Bottom center: PM -->
+  <rect x="195" y="460" width="210" height="45" rx="12" fill="#5ac8fa"/>
+  <text x="300" y="485" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="DM Sans,Noto Sans JP">プロダクトマネジャー（PM）</text>
+  <text x="300" y="498" text-anchor="middle" fill="#d6f2ff" font-size="9" font-family="DM Sans,Noto Sans JP">商品設計 / 販売支援 / 管理</text>
+  <line x1="300" y1="460" x2="300" y2="280" stroke="#5ac8fa" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="250" y1="465" x2="140" y2="430" stroke="#5ac8fa" stroke-width="1" stroke-dasharray="3"/>
+  <line x1="350" y1="465" x2="440" y2="430" stroke="#5ac8fa" stroke-width="1" stroke-dasharray="3"/>
+
+  <!-- Labels -->
+  <text x="315" y="340" font-size="8" fill="#86868b" font-family="DM Sans">PMは全ステークホルダーの</text>
+  <text x="315" y="352" font-size="8" fill="#86868b" font-family="DM Sans">ハブとして機能</text>
+</svg>
+</div>
+
+<div class="card">
+  <h3>📊 バリューチェーンの構造</h3>
+  <ul>
+    <li><strong>運用会社（委託会社）</strong>：ファンドの設定・運用指図。信託報酬の「委託者報酬」を受領</li>
+    <li><strong>販売会社</strong>：投資家への勧誘・販売・口座管理。「代行手数料」を受領</li>
+    <li><strong>受託銀行（信託銀行）</strong>：ファンド資産の保管・管理・基準価額計算。「受託者報酬」を受領</li>
+    <li><strong>投資家</strong>：購入時手数料＋信託報酬（間接コスト）＋信託財産留保額を負担</li>
+  </ul>
+  <button class="expand-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ 閉じる':'▼ 詳細を見る'">▼ 詳細を見る</button>
+  <div class="expand-content">
+    <p>信託報酬の配分比率は商品により異なるが、典型的なアクティブ株式ファンドでは委託者報酬50-60%、代行手数料30-40%、受託者報酬5-10%程度。近年のフィー引き下げ圧力は主に委託者報酬と代行手数料に影響。</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>🏢 主要プレーヤー（日本）</h3>
+  <ul>
+    <li><strong>国内大手</strong>：野村AM、大和AM、三菱UFJ AM、アセットマネジメントOne、三井住友DS AM</li>
+    <li><strong>外資系</strong>：ブラックロック、バンガード、フィデリティ、PIMCO、シュローダー</li>
+    <li><strong>独立系</strong>：レオス・キャピタル、スパークス、コモンズ投信</li>
+    <li><strong>ETF/インデックス</strong>：三菱UFJ AM（eMAXIS Slim）、SBI AM、楽天投信</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>🌍 グローバル市場規模</h3>
+  <ul>
+    <li><strong>世界のAUM</strong>：約$120兆（2024年）。トップ3はブラックロック($10T+)、バンガード($9T+)、フィデリティ($5T+)</li>
+    <li><strong>日本の投信残高</strong>：約230兆円（公募投信、2024年末）。ETF含むと300兆円超</li>
+    <li><strong>トレンド</strong>：パッシブへの資金シフト、フィー引き下げ競争、ESG/サステナブル投資の拡大</li>
+  </ul>
+</div>
+
+<div style="text-align:center;padding:30px 0;font-size:11px;color:var(--sub)">Academy — Asset Management PM</div>
+</div>
+</body>
+</html>

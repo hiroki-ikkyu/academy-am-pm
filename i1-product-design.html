@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>商品設計とファンド組成 — Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--accent:#2c2c2e;--blue:#0071e3;--green:#34c759;--orange:#ff9f0a;--red:#ff453a;--purple:#bf5af2;--teal:#5ac8fa;--radius:16px;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+body{font-family:'DM Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:430px;margin:0 auto;padding:0 20px 60px}
+.back{display:inline-flex;align-items:center;gap:4px;padding:16px 0;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.level-badge{display:inline-block;padding:4px 10px;border-radius:8px;font-size:10px;font-weight:700;color:#fff;margin-bottom:10px}
+.page-title{font-size:22px;font-weight:700;margin-bottom:4px;letter-spacing:-0.5px;line-height:1.3}
+.page-sub{font-size:12px;color:var(--sub);margin-bottom:24px;line-height:1.5}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h4{font-size:13px;font-weight:700;margin:12px 0 6px;color:var(--accent)}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.75}
+.card ul,.card ol{padding-left:18px;margin:8px 0}
+.card li{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:4px}
+.card li strong{color:var(--text)}
+.formula{background:#f0f0f2;border-radius:10px;padding:14px;margin:12px 0;font-family:'DM Sans',monospace;font-size:13px;font-weight:600;text-align:center;line-height:1.6}
+.highlight{border-radius:0 10px 10px 0;padding:12px 14px;margin:12px 0}
+.highlight p{color:var(--text)!important;font-weight:500;font-size:12.5px;line-height:1.75}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.stat-box{background:var(--bg);border-radius:10px;padding:12px;text-align:center}
+.stat-val{font-size:20px;font-weight:700}
+.stat-label{font-size:10px;color:var(--sub);margin-top:2px}
+.table-wrap{overflow-x:auto;margin:12px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:300px}
+th{background:var(--accent);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #f0f0f2}
+tr:nth-child(even) td{background:#fafafa}
+.quiz{background:var(--card);border:2px solid #e5e5e7;border-radius:var(--radius);padding:18px;margin:14px 0}
+.quiz h4{font-size:13px;font-weight:700;margin-bottom:10px}
+.quiz-option{display:block;width:100%;padding:10px 14px;margin:6px 0;background:var(--bg);border:1.5px solid transparent;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;text-align:left;transition:all 0.2s}
+.quiz-option:hover{border-color:#ccc}
+.quiz-option.correct{background:#34c75920;border-color:#34c759}
+.quiz-option.wrong{background:#ff453a15;border-color:#ff453a}
+.quiz-feedback{font-size:12px;color:var(--sub);margin-top:8px;display:none;line-height:1.6}
+.nav-bottom{display:flex;gap:10px;margin-top:30px}
+.nav-btn{flex:1;padding:14px;border-radius:12px;text-align:center;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-btn.prev{background:var(--card);color:var(--text);box-shadow:var(--shadow)}
+.nav-btn.next{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card,.quiz{animation:fadeUp 0.4s ease both}
+
+.level-badge{background:#ff9f0a}
+.stat-val{color:#ff9f0a}
+.highlight{background:#ff9f0a12;border-left:3px solid #ff9f0a}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="index.html">‹ ホームに戻る</a>
+<div class="level-badge">中級編 #1</div>
+<div class="page-title">商品設計とファンド組成</div>
+<div class="page-sub">企画→届出→設定→ローンチ——新ファンドを世に送り出すPMの実務プロセス</div>
+
+<div class="card">
+  <h3>🏗️ ファンド組成の全体フロー</h3>
+  <p>新ファンドの組成は、PMが中心となって6-12ヶ月かけて進めるプロジェクト。</p>
+  <h4>フェーズ1: 企画（2-3ヶ月）</h4>
+  <ul>
+    <li><strong>市場調査</strong>：投資家ニーズ、競合状況、資金フロートレンドの分析</li>
+    <li><strong>コンセプト設計</strong>：運用戦略、ベンチマーク、フィー水準、ターゲット顧客の決定</li>
+    <li><strong>社内稟議</strong>：商品企画書を作成し、新商品委員会で承認を取得</li>
+    <li><strong>販社打診</strong>：主要販売会社に事前ヒアリング。販売意向と必要AUM目線を確認</li>
+  </ul>
+  <h4>フェーズ2: 組成（2-4ヶ月）</h4>
+  <ul>
+    <li><strong>信託約款作成</strong>：法務・コンプライアンスと連携。運用制限、費用、分配方針を規定</li>
+    <li><strong>金融庁届出</strong>：信託約款＋目論見書を提出。届出後15日の待機期間</li>
+    <li><strong>受託銀行選定</strong>：受託者報酬の交渉、基準価額計算体制の確認</li>
+    <li><strong>販売会社契約</strong>：代行手数料率の交渉、販売開始日の調整</li>
+  </ul>
+  <h4>フェーズ3: ローンチ（1-2ヶ月）</h4>
+  <ul>
+    <li><strong>目論見書・販促資料作成</strong>：投資家向け・販社向けの資料を準備</li>
+    <li><strong>販社研修</strong>：商品説明会の実施。FAQの準備</li>
+    <li><strong>設定日</strong>：初期資金の受入れ、初回基準価額の算出</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>📐 商品設計の重要な意思決定</h3>
+  <div class="table-wrap"><table>
+    <tr><th>意思決定項目</th><th>選択肢</th><th>PMの判断基準</th></tr>
+    <tr><td>ベンチマーク</td><td>TOPIX/MSCI/なし</td><td>運用戦略との整合性、ライセンスコスト</td></tr>
+    <tr><td>信託報酬</td><td>低〜高</td><td>競合水準、BEP、販社インセンティブ</td></tr>
+    <tr><td>分配方針</td><td>毎月/年1回/なし</td><td>ターゲット顧客のインカムニーズ</td></tr>
+    <tr><td>為替ヘッジ</td><td>あり/なし/選択型</td><td>投資家のリスク選好、コスト</td></tr>
+    <tr><td>購入時手数料</td><td>0-3%</td><td>チャネル特性、ノーロードトレンド</td></tr>
+  </table></div>
+  <div class="highlight"><p>💎 商品設計は「一度設定したら変更困難」な要素が多い。ベンチマーク変更や信託報酬引下げは信託約款変更（受益者書面決議が必要な場合も）を伴うため、PMは設定時に将来を見据えた設計が求められる。</p></div>
+</div>
+
+<div class="quiz">
+  <h4>🧪 確認クイズ</h4>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:10px">新ファンドの金融庁届出後、設定日まで最低何日間の待機期間が必要か？</p>
+  <button class="quiz-option" data-correct="false">7日</button>
+  <button class="quiz-option" data-correct="true">15日</button>
+  <button class="quiz-option" data-correct="false">30日</button>
+  <button class="quiz-option" data-correct="false">待機期間は不要</button>
+  <div class="quiz-feedback">✅ 投信法に基づき、届出後15日間の待機期間が必要。この間に金融庁が届出内容を確認する。PMはこの期間をローンチ準備（販促資料作成、販社研修等）に活用する。</div>
+</div>
+
+<div class="nav-bottom">
+  <a class="nav-btn prev" href="b8-benchmarks.html">← 前へ</a>
+  <a class="nav-btn next" href="i2-performance.html">次へ: パフォーマンス →</a>
+</div>
+<div style="text-align:center;padding:30px 0;font-size:11px;color:var(--sub)">Academy — Asset Management PM</div>
+</div>
+<script>
+document.querySelectorAll('.quiz').forEach(q=>{const opts=q.querySelectorAll('.quiz-option');const fb=q.querySelector('.quiz-feedback');opts.forEach(o=>{o.addEventListener('click',()=>{if(q.dataset.answered)return;q.dataset.answered='true';opts.forEach(x=>x.style.pointerEvents='none');if(o.dataset.correct==='true'){o.classList.add('correct')}else{o.classList.add('wrong');opts.forEach(x=>{if(x.dataset.correct==='true')x.classList.add('correct')})}if(fb)fb.style.display='block'})})});
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>PM業務フレームワーク — Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--accent:#2c2c2e;--blue:#0071e3;--radius:16px;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+body{font-family:'DM Sans','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:430px;margin:0 auto;padding:0 20px 60px}
+.back{display:inline-flex;align-items:center;gap:4px;padding:16px 0;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.page-title{font-size:20px;font-weight:700;margin-bottom:4px;letter-spacing:-0.5px}
+.page-sub{font-size:12px;color:var(--sub);margin-bottom:20px;line-height:1.5}
+.map-container{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);margin-bottom:16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h4{font-size:13px;font-weight:700;margin:12px 0 6px;color:var(--accent)}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.75}
+.card ul{padding-left:18px;margin:8px 0}
+.card li{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:4px}
+.card li strong{color:var(--text)}
+.formula{background:#f0f0f2;border-radius:10px;padding:14px;margin:12px 0;font-family:'DM Sans',monospace;font-size:13px;font-weight:600;text-align:center;line-height:1.6}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card,.map-container{animation:fadeUp 0.4s ease both}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="index.html">‹ ホームに戻る</a>
+<div class="page-title">📊 PM業務フレームワーク</div>
+<div class="page-sub">プロダクトマネジャーの5つの中核領域を体系化</div>
+
+<div class="map-container">
+<svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:500px">
+  <!-- Center: PM -->
+  <circle cx="300" cy="240" r="55" fill="#2c2c2e"/>
+  <text x="300" y="235" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="DM Sans,Noto Sans JP">プロダクト</text>
+  <text x="300" y="250" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="DM Sans,Noto Sans JP">マネジャー</text>
+
+  <!-- 1: Product Design (top) -->
+  <rect x="220" y="30" width="160" height="50" rx="12" fill="#0071e3"/>
+  <text x="300" y="55" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="DM Sans,Noto Sans JP">① 商品設計・組成</text>
+  <text x="300" y="69" text-anchor="middle" fill="#cce4ff" font-size="9" font-family="DM Sans,Noto Sans JP">企画→届出→設定→ローンチ</text>
+  <line x1="300" y1="80" x2="300" y2="185" stroke="#0071e3" stroke-width="2"/>
+
+  <!-- 2: Regulation (top-right) -->
+  <rect x="440" y="100" width="150" height="50" rx="12" fill="#ff453a"/>
+  <text x="515" y="125" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="DM Sans,Noto Sans JP">② 規制・コンプラ</text>
+  <text x="515" y="139" text-anchor="middle" fill="#ffd6d4" font-size="9" font-family="DM Sans,Noto Sans JP">目論見書 / 届出 / GIPS</text>
+  <line x1="440" y1="130" x2="350" y2="210" stroke="#ff453a" stroke-width="2"/>
+
+  <!-- 3: Sales (bottom-right) -->
+  <rect x="440" y="330" width="150" height="50" rx="12" fill="#34c759"/>
+  <text x="515" y="355" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="DM Sans,Noto Sans JP">③ 販売戦略</text>
+  <text x="515" y="369" text-anchor="middle" fill="#c8f7d6" font-size="9" font-family="DM Sans,Noto Sans JP">チャネル / 販促 / 研修</text>
+  <line x1="440" y1="350" x2="350" y2="270" stroke="#34c759" stroke-width="2"/>
+
+  <!-- 4: Performance (bottom-left) -->
+  <rect x="10" y="330" width="160" height="50" rx="12" fill="#ff9f0a"/>
+  <text x="90" y="355" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="DM Sans,Noto Sans JP">④ パフォーマンス管理</text>
+  <text x="90" y="369" text-anchor="middle" fill="#fff3d6" font-size="9" font-family="DM Sans,Noto Sans JP">リターン / リスク / 帰属</text>
+  <line x1="170" y1="350" x2="250" y2="270" stroke="#ff9f0a" stroke-width="2"/>
+
+  <!-- 5: Competitive (top-left) -->
+  <rect x="10" y="100" width="160" height="50" rx="12" fill="#bf5af2"/>
+  <text x="90" y="125" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" font-family="DM Sans,Noto Sans JP">⑤ 競合分析・マーケ</text>
+  <text x="90" y="139" text-anchor="middle" fill="#ecd6ff" font-size="9" font-family="DM Sans,Noto Sans JP">シェア / ポジショニング</text>
+  <line x1="170" y1="130" x2="250" y2="210" stroke="#bf5af2" stroke-width="2"/>
+
+  <!-- Bottom: Lifecycle -->
+  <rect x="140" y="430" width="320" height="40" rx="10" fill="#f0f0f2" stroke="#86868b" stroke-width="1"/>
+  <text x="300" y="455" text-anchor="middle" fill="#2c2c2e" font-size="10" font-weight="600" font-family="DM Sans,Noto Sans JP">プロダクト・ライフサイクル：企画 → ローンチ → 成長 → 成熟 → 統廃合</text>
+  <line x1="300" y1="295" x2="300" y2="430" stroke="#86868b" stroke-width="1" stroke-dasharray="4"/>
+</svg>
+</div>
+
+<div class="card">
+  <h3>① 商品設計・組成</h3>
+  <ul>
+    <li><strong>市場ニーズ分析</strong>：投資家の資産配分ニーズ、市場環境、競合状況の調査</li>
+    <li><strong>コンセプト設計</strong>：運用戦略、ベンチマーク、フィー水準、ターゲット顧客の決定</li>
+    <li><strong>組成プロセス</strong>：信託約款作成→金融庁届出→受託銀行選定→設定日決定</li>
+    <li><strong>ローンチ</strong>：目論見書作成、販社向け説明、マーケティング資料準備</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>② 規制・コンプライアンス</h3>
+  <ul>
+    <li><strong>金商法</strong>：投資運用業登録、適合性原則、利益相反管理</li>
+    <li><strong>投信法</strong>：信託約款の届出・変更、運用報告書の交付義務</li>
+    <li><strong>目論見書規制</strong>：交付目論見書（投資判断に必要な重要事項）の記載要件</li>
+    <li><strong>フィデューシャリー・デューティー</strong>：顧客本位の業務運営原則</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>③ 販売戦略</h3>
+  <ul>
+    <li><strong>チャネル戦略</strong>：証券会社、銀行、IFA、直販、DC/iDeCoの使い分け</li>
+    <li><strong>販社向け活動</strong>：勉強会、販促資料、販売インセンティブ設計</li>
+    <li><strong>マーケティング</strong>：Web、セミナー、メディア露出、ブランディング</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>④ パフォーマンス管理</h3>
+  <ul>
+    <li><strong>リターン計測</strong>：TWR（時間加重収益率）、基準価額の推移管理</li>
+    <li><strong>リスク指標</strong>：標準偏差、シャープレシオ、最大ドローダウン、TE</li>
+    <li><strong>アトリビューション</strong>：Brinson分析（配分効果・銘柄選択効果）</li>
+    <li><strong>ピアランキング</strong>：Morningstar/Lipper等のカテゴリー内順位管理</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>⑤ 競合分析・マーケティング</h3>
+  <ul>
+    <li><strong>AUM/フロー分析</strong>：純資金流出入のモニタリング、市場シェア推移</li>
+    <li><strong>ポジショニング</strong>：フィー×パフォーマンスの2軸マップ、差別化ポイント整理</li>
+    <li><strong>市場トレンド</strong>：新商品動向、規制変更の影響、テクノロジー変化</li>
+  </ul>
+</div>
+
+<div style="text-align:center;padding:30px 0;font-size:11px;color:var(--sub)">Academy — Asset Management PM</div>
+</div>
+</body>
+</html>
